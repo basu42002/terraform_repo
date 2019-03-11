@@ -12,4 +12,10 @@ resource "aws_security_group" "bas-pdx-inbound-all"
     # Opening to 0.0.0.0/0 can lead to security vulnerabilities.
     cidr_blocks = ["0.0.0.0/0"]# add your IP address here
   }
+  egress {
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
+  cidr_blocks = ["0.0.0.0/0"]
+}
 }
